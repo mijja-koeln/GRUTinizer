@@ -99,6 +99,11 @@ class TCagraHit : public TDetectorHit {
     void DrawBaselineExponential(int segnum=0);
     inline void MarkAsSegmentHit() { is_segment = true; }
     bool IsSegment() { return is_segment; }
+    void SetCorrectedEnergy(Double_t energy) { corrected_energy = energy; }
+
+    Double_t GetEnergy_Fit(int segnum=0, double decayTime=5000.0);
+    Double_t GetCharge_Fit(int segnum=0, double decayTime=5000.0);
+
 
   private:
     bool is_segment;
